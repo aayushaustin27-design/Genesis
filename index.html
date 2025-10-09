@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Audiowide&family=Montserrat:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Custom CSS */
+        /* Custom CSS - Common styles for both views */
         :root {
             --primary-neon: #FF3CA6;      /* Bright pink / fuchsia */
             --accent-neon: #00FFE7;       /* Cyan / Teal */
@@ -575,8 +575,202 @@
             gap: 20px;
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
+        /* Desktop-specific styles */
+        .desktop-only {
+            display: none;
+        }
+        
+        .desktop-timeline {
+            display: none;
+        }
+        
+        .desktop-category-grid {
+            display: none;
+        }
+        
+        /* Mobile-specific styles */
+        .mobile-only {
+            display: block;
+        }
+        
+        .mobile-timeline {
+            display: block;
+        }
+        
+        .mobile-category-container {
+            display: block;
+        }
+        
+        /* Media Queries for Responsive Design */
+        @media (min-width: 768px) {
+            /* Desktop styles */
+            .desktop-only {
+                display: block;
+            }
+            
+            .desktop-timeline {
+                display: block;
+            }
+            
+            .desktop-category-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+            
+            /* Hide mobile elements */
+            .mobile-only {
+                display: none;
+            }
+            
+            .mobile-timeline {
+                display: none;
+            }
+            
+            .mobile-category-container {
+                display: none;
+            }
+            
+            /* Desktop-specific adjustments */
+            .countdown {
+                gap: 20px;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
+            }
+            
+            .category-column {
+                background-color: var(--card-bg);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                padding: 20px;
+                height: 100%;
+                overflow-y: auto;
+            }
+            
+            .category-column::-webkit-scrollbar {
+                width: 6px;
+            }
+            
+            .category-column::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 3px;
+            }
+            
+            .category-column::-webkit-scrollbar-thumb {
+                background: var(--primary-neon);
+                border-radius: 3px;
+            }
+            
+            .category-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .category-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 15px;
+                font-size: 1.2rem;
+            }
+            
+            .category-title {
+                font-family: 'Audiowide', sans-serif;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+            
+            .problem-item {
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 6px;
+                padding: 15px;
+                margin-bottom: 15px;
+                transition: all 0.3s ease;
+            }
+            
+            .problem-title {
+                font-family: 'Bebas Neue', sans-serif;
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+                color: var(--primary-neon);
+            }
+            
+            .problem-description {
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+                margin-bottom: 12px;
+            }
+            
+            .timeline-line {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(to bottom, transparent, var(--primary-neon), transparent);
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+            
+            .timeline-dot {
+                position: absolute;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: var(--primary-neon);
+                transform: translateX(-50%);
+                z-index: 2;
+                box-shadow: 0 0 10px var(--primary-neon);
+            }
+            
+            .timeline-item {
+                position: relative;
+                margin-bottom: 30px;
+            }
+            
+            .timeline-item .timeline-content {
+                width: calc(50% - 30px);
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: auto;
+                margin-right: 30px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 30px;
+            }
+            
+            .modal-content {
+                width: 80%;
+                max-width: 600px;
+                padding: 30px;
+            }
+            
+            .close {
+                font-size: 28px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            /* Mobile-specific adjustments */
             .countdown {
                 gap: 8px;
             }
@@ -656,6 +850,19 @@
                 <a href="#contact" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300 px-4 py-2">Contact</a>
             </div>
         </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex justify-center mt-4">
+            <div class="flex space-x-8">
+                <a href="#hero" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Home</a>
+                <a href="#about" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">About</a>
+                <a href="#problems" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Problem Statements</a>
+                <a href="#register" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Register</a>
+                <a href="#timeline" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Timeline</a>
+                <a href="#team" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Team</a>
+                <a href="#contact" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Contact</a>
+            </div>
+        </div>
     </nav>
     
     <!-- Hero Section -->
@@ -715,7 +922,7 @@
                 </div>
                 
                 <div class="mt-12 text-gray-400">
-                    <p>October 12, 2025 | St. Austin’s Sr. Sec. School</p>
+                    <p>October 12, 2025 | St. Austin's Sr. Sec. School</p>
                 </div>
             </div>
         </div>
@@ -743,7 +950,7 @@
                                 Genesis Hackathon is an inter-school innovation event that brings together the brightest young minds to solve real-world problems through technology and creativity.
                             </p>
                             <p>
-                                Hosted by SIN Innovation at St. Austin’s Sr. Sec. School on October 12, 2025, this event aims to foster innovation, teamwork, and problem-solving skills among students.
+                                Hosted by SIN Innovation at St. Austin's Sr. Sec. School on October 12, 2025, this event aims to foster innovation, teamwork, and problem-solving skills among students.
                             </p>
                         </div>
                     </div>
@@ -777,8 +984,14 @@
                 PROBLEM STATEMENTS
             </h2>
             
-            <div id="category-container">
-                <!-- Category sections will be dynamically loaded here -->
+            <!-- Mobile Problem Statements View -->
+            <div id="mobile-category-container" class="mobile-category-container">
+                <!-- Mobile category sections will be dynamically loaded here -->
+            </div>
+            
+            <!-- Desktop Problem Statements View -->
+            <div id="desktop-category-grid" class="desktop-category-grid">
+                <!-- Desktop category columns will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -838,8 +1051,21 @@
             </h2>
             
             <div class="max-w-4xl mx-auto">
-                <div id="timeline-container">
-                    <!-- Timeline items will be dynamically loaded here -->
+                <!-- Mobile Timeline View -->
+                <div id="mobile-timeline" class="mobile-timeline">
+                    <!-- Mobile timeline items will be dynamically loaded here -->
+                </div>
+                
+                <!-- Desktop Timeline View -->
+                <div id="desktop-timeline" class="desktop-timeline">
+                    <div class="relative">
+                        <!-- Timeline line -->
+                        <div class="timeline-line"></div>
+                        
+                        <div class="space-y-12" id="timeline-events">
+                            <!-- Desktop timeline events will be dynamically loaded here -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -925,7 +1151,7 @@
                         <span class="text-lg font-bold heading-primary">GENESIS 2025</span>
                     </div>
                     <p class="mt-2 text-gray-400 text-sm">
-                        October 12, 2025 | St. Austin’s Sr. Sec. School
+                        October 12, 2025 | St. Austin's Sr. Sec. School
                     </p>
                 </div>
                 
@@ -1719,11 +1945,13 @@
         
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
-            // Load problem statements by category
-            loadProblemStatementsByCategory();
+            // Load problem statements for both mobile and desktop
+            loadMobileProblemStatements();
+            loadDesktopProblemStatements();
             
-            // Load timeline events
-            loadTimelineEvents();
+            // Load timeline events for both mobile and desktop
+            loadMobileTimelineEvents();
+            loadDesktopTimelineEvents();
             
             // Load team members
             loadTeamMembers();
@@ -1747,9 +1975,9 @@
             initSmoothScrolling();
         });
         
-        // Load problem statements by category
-        function loadProblemStatementsByCategory() {
-            const categoryContainer = document.getElementById('category-container');
+        // Load problem statements for mobile view
+        function loadMobileProblemStatements() {
+            const categoryContainer = document.getElementById('mobile-category-container');
             
             // Create a section for each category
             categories.forEach(category => {
@@ -1786,7 +2014,46 @@
             });
         }
         
-        // Create problem item
+        // Load problem statements for desktop view
+        function loadDesktopProblemStatements() {
+            const categoryGrid = document.getElementById('desktop-category-grid');
+            
+            // Create a column for each category
+            categories.forEach(category => {
+                const categoryColumn = document.createElement('div');
+                categoryColumn.className = 'category-column';
+                
+                // Create category header
+                const categoryHeader = document.createElement('div');
+                categoryHeader.className = 'category-header';
+                
+                const categoryIcon = document.createElement('div');
+                categoryIcon.className = `category-icon ${category.color} ${category.iconColor}`;
+                categoryIcon.innerHTML = `<i class="${category.icon}"></i>`;
+                
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.className = 'category-title';
+                categoryTitle.textContent = category.name;
+                
+                categoryHeader.appendChild(categoryIcon);
+                categoryHeader.appendChild(categoryTitle);
+                categoryColumn.appendChild(categoryHeader);
+                
+                // Filter problems for this category
+                const categoryProblems = problemStatements.filter(problem => problem.category === category.name);
+                
+                // Add problem items to this category column
+                categoryProblems.forEach(problem => {
+                    const problemItem = createProblemItem(problem);
+                    categoryColumn.appendChild(problemItem);
+                });
+                
+                // Add the category column to the grid
+                categoryGrid.appendChild(categoryColumn);
+            });
+        }
+        
+        // Create problem item (works for both mobile and desktop)
         function createProblemItem(problem) {
             const problemItem = document.createElement('div');
             problemItem.className = 'problem-item';
@@ -1810,34 +2077,9 @@
             return problemItem;
         }
         
-        // Show problem details in modal
-        function showProblemDetails(problem) {
-            const modal = document.getElementById('problem-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalContent = document.getElementById('modal-content');
-            
-            modalTitle.textContent = problem.title;
-            modalContent.innerHTML = `
-                <div class="mb-4">
-                    <span class="badge bg-purple-600 text-white">
-                        ${problem.category}
-                    </span>
-                </div>
-                <p class="mb-2"><strong>Description:</strong> ${problem.description}</p>
-                <p class="mb-4"><strong>Details:</strong> ${problem.details}</p>
-                <div class="mt-6">
-                    <button class="btn-primary" onclick="closeModal()">
-                        Close
-                    </button>
-                </div>
-            `;
-            
-            modal.style.display = 'block';
-        }
-        
-        // Load timeline events
-        function loadTimelineEvents() {
-            const timelineContainer = document.getElementById('timeline-container');
+        // Load timeline events for mobile view
+        function loadMobileTimelineEvents() {
+            const timelineContainer = document.getElementById('mobile-timeline');
             
             timelineEvents.forEach((event, index) => {
                 const timelineItem = document.createElement('div');
@@ -1855,6 +2097,38 @@
                 `;
                 
                 timelineContainer.appendChild(timelineItem);
+            });
+        }
+        
+        // Load timeline events for desktop view
+        function loadDesktopTimelineEvents() {
+            const container = document.getElementById('timeline-events');
+            
+            timelineEvents.forEach((event, index) => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = `relative flex flex-col md:flex-row ${index % 2 === 0 ? '' : 'md:flex-row-reverse'} items-center`;
+                
+                timelineItem.innerHTML = `
+                    <!-- Timeline dot -->
+                    <div class="timeline-dot hidden md:block"></div>
+                    
+                    <!-- Content -->
+                    <div class="w-full md:w-5/12 pl-16 md:pl-0 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} pt-2">
+                        <div class="card p-6 card-hover">
+                            <div class="text-primary-neon font-bold mb-2">${event.time}</div>
+                            <h3 class="text-xl font-bold mb-2 heading-secondary">${event.title}</h3>
+                            <div class="flex items-center text-gray-400">
+                                <i class="${event.icon} mr-2"></i>
+                                <span>${event.description}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Empty space for alignment -->
+                    <div class="hidden md:block md:w-5/12"></div>
+                `;
+                
+                container.appendChild(timelineItem);
             });
         }
         
@@ -1891,6 +2165,31 @@
                 
                 teamGrid.appendChild(memberCard);
             });
+        }
+        
+        // Show problem details in modal
+        function showProblemDetails(problem) {
+            const modal = document.getElementById('problem-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            
+            modalTitle.textContent = problem.title;
+            modalContent.innerHTML = `
+                <div class="mb-4">
+                    <span class="badge bg-purple-600 text-white">
+                        ${problem.category}
+                    </span>
+                </div>
+                <p class="mb-2"><strong>Description:</strong> ${problem.description}</p>
+                <p class="mb-4"><strong>Details:</strong> ${problem.details}</p>
+                <div class="mt-6">
+                    <button class="btn-primary" onclick="closeModal()">
+                        Close
+                    </button>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
         }
         
         // Initialize countdown timer
