@@ -6,7 +6,7 @@
     <title>Genesis Hackathon 2025 - From Vice to Vision</title>
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -144,6 +144,7 @@
             font-size: 1.2rem;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            padding: 8px 0;
         }
         
         .nav-item::after {
@@ -167,7 +168,7 @@
             color: var(--dark-bg);
             font-family: 'Bebas Neue', sans-serif;
             font-weight: bold;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 4px;
             transition: all 0.3s ease;
             display: inline-flex;
@@ -178,6 +179,9 @@
             font-size: 1.1rem;
             border: none;
             box-shadow: 0 4px 15px rgba(255, 60, 166, 0.4);
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
         }
         
         .btn-primary:hover {
@@ -225,6 +229,8 @@
             border: none;
             box-shadow: 0 4px 15px rgba(255, 60, 166, 0.4);
             margin-top: 20px;
+            width: 100%;
+            max-width: 320px;
         }
         
         .btn-form:hover {
@@ -337,7 +343,7 @@
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 12px;
             margin: 30px 0;
             flex-wrap: wrap;
         }
@@ -347,8 +353,8 @@
             background-color: rgba(255, 60, 166, 0.1);
             border: 1px solid var(--primary-neon);
             border-radius: 8px;
-            padding: 15px;
-            min-width: 80px;
+            padding: 12px 8px;
+            min-width: 70px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
@@ -360,7 +366,7 @@
         
         .countdown-value {
             font-family: 'Audiowide', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-neon);
         }
         
@@ -480,7 +486,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
-            padding: 40px;
+            padding: 30px 20px;
         }
         
         .google-form-container h3 {
@@ -636,74 +642,88 @@
             box-shadow: 0 0 15px rgba(255, 60, 166, 0.4);
         }
         
-        /* Desktop-specific styles */
-        .desktop-only {
-            display: none;
+        /* Mobile-first styles */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
         }
         
-        .desktop-timeline {
-            display: none;
+        .mobile-menu-overlay.active {
+            transform: translateX(0);
         }
         
-        .desktop-category-grid {
-            display: none;
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--primary-neon);
+            font-size: 28px;
+            cursor: pointer;
         }
         
-        /* Mobile-specific styles */
-        .mobile-only {
-            display: block;
+        .mobile-menu-item {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin: 15px 0;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
         
-        .mobile-timeline {
-            display: block;
-        }
-        
-        .mobile-category-container {
-            display: block;
+        .mobile-menu-item:hover {
+            color: var(--primary-neon);
         }
         
         /* Media Queries for Responsive Design */
         @media (min-width: 768px) {
-            /* Desktop styles */
-            .desktop-only {
-                display: block;
-            }
-            
-            .desktop-timeline {
-                display: block;
-            }
-            
-            .desktop-category-grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-            }
-            
-            /* Hide mobile elements */
-            .mobile-only {
+            /* Tablet styles */
+            .mobile-menu-button {
                 display: none;
             }
             
-            .mobile-timeline {
+            .mobile-menu-overlay {
                 display: none;
             }
             
-            .mobile-category-container {
-                display: none;
+            .desktop-nav {
+                display: flex !important;
             }
             
-            /* Desktop-specific adjustments */
+            /* Tablet-specific adjustments */
             .countdown {
-                gap: 20px;
+                gap: 16px;
             }
             
             .countdown-item {
-                min-width: 80px;
-                padding: 15px;
+                min-width: 75px;
+                padding: 14px 10px;
             }
             
             .countdown-value {
-                font-size: 2rem;
+                font-size: 1.9rem;
+            }
+            
+            .btn-primary {
+                width: auto;
+                max-width: none;
+                margin: 0;
+            }
+            
+            .btn-form {
+                width: auto;
+                max-width: none;
             }
             
             .category-column {
@@ -744,7 +764,7 @@
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
-                justify-center;
+                justify-content: center;
                 margin-right: 15px;
                 font-size: 1.2rem;
             }
@@ -776,6 +796,33 @@
                 font-size: 0.9rem;
                 color: var(--text-secondary);
                 margin-bottom: 12px;
+            }
+            
+            .modal-content {
+                width: 80%;
+                max-width: 600px;
+                padding: 30px;
+            }
+            
+            .close {
+                font-size: 28px;
+                right: 20px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            /* Desktop styles */
+            .countdown {
+                gap: 20px;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
             }
             
             .timeline-line {
@@ -819,15 +866,12 @@
                 margin-left: 30px;
             }
             
-            .modal-content {
-                width: 80%;
-                max-width: 600px;
-                padding: 30px;
+            .desktop-timeline {
+                display: block !important;
             }
             
-            .close {
-                font-size: 28px;
-                right: 20px;
+            .mobile-timeline {
+                display: none !important;
             }
         }
         
@@ -882,6 +926,44 @@
             .timeline-item::before {
                 left: 12px;
             }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: block;
+            }
+            
+            .desktop-timeline {
+                display: none !important;
+            }
+            
+            .mobile-timeline {
+                display: block !important;
+            }
+        }
+        
+        @media (max-width: 1023px) {
+            /* Tablet and mobile timeline */
+            .timeline-line {
+                display: none;
+            }
+            
+            .timeline-item {
+                position: relative;
+                margin-bottom: 30px;
+            }
+            
+            .timeline-item .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
     </style>
 </head>
@@ -894,17 +976,17 @@
     </div>
     
     <!-- Navigation -->
-    <nav class="fixed w-full bg-dark-bg bg-opacity-90 backdrop-blur-sm z-50 py-3 px-4 border-b border-gray-800">
+    <nav class="fixed w-full bg-dark-bg bg-opacity-90 backdrop-blur-sm z-50 py-3 px-4 md:px-8 border-b border-gray-800">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center">
                 <div class="w-10 h-10 bg-gradient-to-br from-primary-neon to-accent-neon rounded-full mr-3 flex items-center justify-center">
                     <i class="fas fa-rocket text-dark-bg"></i>
                 </div>
-                <span class="text-xl font-bold heading-primary neon-text-primary">GENESIS 2025</span>
+                <span class="text-xl md:text-2xl font-bold heading-primary neon-text-primary">GENESIS 2025</span>
             </div>
             
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-8">
+            <div class="desktop-nav hidden md:flex space-x-4 lg:space-x-8">
                 <a href="#hero" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Home</a>
                 <a href="#about" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">About</a>
                 <a href="#register" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Register</a>
@@ -914,41 +996,42 @@
             </div>
             
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="text-primary-neon focus:outline-none md:hidden">
+            <button id="mobile-menu-button" class="mobile-menu-button text-primary-neon focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
-        
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden mt-4 pb-4 md:hidden">
-            <div class="flex flex-col space-y-2">
-                <a href="#hero" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300 px-4 py-2">Home</a>
-                <a href="#about" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300 px-4 py-2">About</a>
-                <a href="#register" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300 px-4 py-2">Register</a>
-                <a href="#timeline" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300 px-4 py-2">Timeline</a>
-                <a href="#team" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300 px-4 py-2">Team</a>
-                <a href="#contact" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300 px-4 py-2">Contact</a>
-            </div>
-        </div>
     </nav>
     
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <div class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="#hero" class="mobile-menu-item">Home</a>
+        <a href="#about" class="mobile-menu-item">About</a>
+        <a href="#register" class="mobile-menu-item">Register</a>
+        <a href="#timeline" class="mobile-menu-item">Timeline</a>
+        <a href="#team" class="mobile-menu-item">Team</a>
+        <a href="#contact" class="mobile-menu-item">Contact</a>
+    </div>
+    
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
         <div class="container mx-auto px-4 z-10 text-center">
             <div class="max-w-4xl mx-auto">
                 <div class="mb-8 flex justify-center">
-                    <div class="w-24 h-24 bg-gradient-to-br from-primary-neon to-accent-neon rounded-full flex items-center justify-center animate-pulse glow">
-                        <div class="w-16 h-16 bg-dark-bg rounded-full flex items-center justify-center">
-                            <i class="fas fa-bolt text-primary-neon text-2xl"></i>
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary-neon to-accent-neon rounded-full flex items-center justify-center animate-pulse glow">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-dark-bg rounded-full flex items-center justify-center">
+                            <i class="fas fa-bolt text-primary-neon text-xl md:text-2xl"></i>
                         </div>
                     </div>
                 </div>
                 
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 neon-text-primary heading-primary">
+                <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 neon-text-primary heading-primary">
                     GENESIS HACKATHON 2025
                 </h1>
                 
-                <p class="text-xl md:text-2xl mb-8 font-light neon-text-accent">
+                <p class="text-lg md:text-xl lg:text-2xl mb-8 font-light neon-text-accent">
                     From Vice to Vision – The New Era Begins
                 </p>
                 
@@ -973,7 +1056,7 @@
                 </div>
                 
                 <div id="live-message" class="hidden">
-                    <div class="text-2xl md:text-3xl font-bold neon-text-primary heading-primary">
+                    <div class="text-xl md:text-2xl lg:text-3xl font-bold neon-text-primary heading-primary">
                         Is Live Now At St. Austin's Sen. Sec. School
                     </div>
                 </div>
@@ -986,54 +1069,54 @@
                 </div>
                 
                 <div class="mt-16 text-gray-400">
-                    <p class="text-lg">October 25, 2025 | St. Austin's Sr. Sec. School</p>
+                    <p class="text-base md:text-lg">October 25, 2025 | St. Austin's Sr. Sec. School</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-b from-dark-bg to-black">
+    <section id="about" class="py-16 md:py-20 bg-gradient-to-b from-dark-bg to-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center neon-text-primary heading-primary">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-12 text-center neon-text-primary heading-primary">
                 ABOUT GENESIS
             </h2>
             
             <div class="max-w-5xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="card p-8 card-hover">
+                <div class="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+                    <div class="card p-6 md:p-8 card-hover">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 rounded-full bg-primary-neon bg-opacity-20 flex items-center justify-center mr-4">
                                 <i class="fas fa-lightbulb text-primary-neon text-xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-primary-neon heading-secondary">What is Genesis?</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-primary-neon heading-secondary">What is Genesis?</h3>
                         </div>
-                        <p class="mb-4 text-lg">
+                        <p class="mb-4 text-base md:text-lg">
                             Genesis Hackathon is an inter-school innovation event that brings together the brightest young minds to solve real-world problems through technology and creativity.
                         </p>
-                        <p class="text-gray-300">
+                        <p class="text-gray-300 text-sm md:text-base">
                             Hosted by SIN Innovation at St. Austin's Sr. Sec. School on October 25, 2025, this event aims to foster innovation, teamwork, and problem-solving skills among students.
                         </p>
                     </div>
                     
-                    <div class="card p-8 card-hover">
+                    <div class="card p-6 md:p-8 card-hover">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 rounded-full bg-accent-neon bg-opacity-20 flex items-center justify-center mr-4">
                                 <i class="fas fa-bullseye text-accent-neon text-xl"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-accent-neon heading-secondary">Our Mission</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-accent-neon heading-secondary">Our Mission</h3>
                         </div>
-                        <p class="mb-4 text-lg">
+                        <p class="mb-4 text-base md:text-lg">
                             To create a platform where students can transform their ideas into reality, developing solutions that address challenges in our community and beyond.
                         </p>
-                        <p class="text-gray-300">
+                        <p class="text-gray-300 text-sm md:text-base">
                             We believe in nurturing the next generation of innovators who will lead us into a new era of technological advancement and social impact.
                         </p>
                     </div>
                 </div>
                 
-                <div class="mt-16 text-center">
-                    <div class="inline-block bg-gradient-to-r from-primary-neon to-accent-neon text-dark-bg px-8 py-4 rounded-full font-bold heading-secondary text-xl">
+                <div class="mt-12 md:mt-16 text-center">
+                    <div class="inline-block bg-gradient-to-r from-primary-neon to-accent-neon text-dark-bg px-6 md:px-8 py-3 md:py-4 rounded-full font-bold heading-secondary text-lg md:text-xl">
                         #FromViceToVision
                     </div>
                 </div>
@@ -1042,17 +1125,17 @@
     </section>
     
     <!-- Registration Section -->
-    <section id="register" class="py-20 bg-gradient-to-b from-black to-dark-bg">
+    <section id="register" class="py-16 md:py-20 bg-gradient-to-b from-black to-dark-bg">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center neon-text-primary heading-primary">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-12 text-center neon-text-primary heading-primary">
                 REGISTER NOW
             </h2>
             
             <div class="max-w-4xl mx-auto">
                 <div class="form-container">
                     <div class="mb-8 text-center">
-                        <h3 class="text-2xl font-bold mb-4 heading-secondary neon-text-accent">Join Genesis Hackathon 2025</h3>
-                        <p class="text-gray-300 text-lg">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 heading-secondary neon-text-accent">Join Genesis Hackathon 2025</h3>
+                        <p class="text-gray-300 text-base md:text-lg">
                             Click the button below to access the registration form. All fields are required.
                         </p>
                     </div>
@@ -1060,7 +1143,7 @@
                     <!-- Google Form Link -->
                     <div class="google-form-container">
                         <h3>Registration Form</h3>
-                        <p>Please fill out the registration form to secure your spot at Genesis Hackathon 2025.</p>
+                        <p class="text-base md:text-lg">Please fill out the registration form to secure your spot at Genesis Hackathon 2025.</p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLScvGlrGV-21AHfmh5c2YfK1LdPz74JCmb9zlpIfr8cyVXj79w/viewform?usp=sf_link" target="_blank" class="btn-form">
                             Open Registration Form
                             <i class="fas fa-external-link-alt ml-2"></i>
@@ -1068,7 +1151,7 @@
                     </div>
                     
                     <div class="mt-8 text-center text-gray-400">
-                        <p>Having trouble with the form? <a href="#contact" class="text-primary-neon hover:underline">Contact us</a></p>
+                        <p class="text-sm md:text-base">Having trouble with the form? <a href="#contact" class="text-primary-neon hover:underline">Contact us</a></p>
                     </div>
                 </div>
             </div>
@@ -1076,9 +1159,9 @@
     </section>
     
     <!-- Timeline Section -->
-    <section id="timeline" class="py-20 bg-black">
+    <section id="timeline" class="py-16 md:py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center neon-text-primary heading-primary">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-12 text-center neon-text-primary heading-primary">
                 EVENT TIMELINE
             </h2>
             
@@ -1089,7 +1172,7 @@
                 </div>
                 
                 <!-- Desktop Timeline View -->
-                <div id="desktop-timeline" class="desktop-timeline">
+                <div id="desktop-timeline" class="desktop-timeline hidden">
                     <div class="relative">
                         <!-- Timeline line -->
                         <div class="timeline-line"></div>
@@ -1104,9 +1187,9 @@
     </section>
     
     <!-- Team Members Section -->
-    <section id="team" class="py-20 bg-gradient-to-b from-black to-dark-bg">
+    <section id="team" class="py-16 md:py-20 bg-gradient-to-b from-black to-dark-bg">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center neon-text-primary heading-primary">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-12 text-center neon-text-primary heading-primary">
                 MEET THE TEAM
             </h2>
             
@@ -1117,9 +1200,9 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-black">
+    <section id="contact" class="py-16 md:py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center neon-text-primary heading-primary">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-12 text-center neon-text-primary heading-primary">
                 CONTACT US
             </h2>
             
@@ -1145,7 +1228,7 @@
                     </div>
                     
                     <div class="mt-10 text-center">
-                        <p class="text-gray-400">Feel free to reach out to us for any queries regarding the event.</p>
+                        <p class="text-gray-400 text-sm md:text-base">Feel free to reach out to us for any queries regarding the event.</p>
                     </div>
                 </div>
             </div>
@@ -1153,7 +1236,7 @@
     </section>
     
     <!-- Footer Section -->
-    <footer class="py-16 bg-black border-t border-gray-800">
+    <footer class="py-12 md:py-16 bg-black border-t border-gray-800">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-8 md:mb-0">
@@ -1163,31 +1246,31 @@
                         </div>
                         <span class="text-xl font-bold heading-primary neon-text-primary">GENESIS 2025</span>
                     </div>
-                    <p class="text-gray-400">
+                    <p class="text-gray-400 text-sm md:text-base">
                         October 25, 2025 | St. Austin's Sr. Sec. School
                     </p>
                 </div>
                 
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-primary-neon transition-colors">
-                        <i class="fab fa-instagram text-2xl"></i>
+                        <i class="fab fa-instagram text-xl md:text-2xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-primary-neon transition-colors">
-                        <i class="fab fa-linkedin text-2xl"></i>
+                        <i class="fab fa-linkedin text-xl md:text-2xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-primary-neon transition-colors">
-                        <i class="fab fa-twitter text-2xl"></i>
+                        <i class="fab fa-twitter text-xl md:text-2xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-primary-neon transition-colors">
-                        <i class="fab fa-facebook text-2xl"></i>
+                        <i class="fab fa-facebook text-xl md:text-2xl"></i>
                     </a>
                 </div>
             </div>
             
-            <div class="mt-12 pt-8 border-t border-gray-800">
+            <div class="mt-10 md:mt-12 pt-8 border-t border-gray-800">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="mb-6 md:mb-0">
-                        <p class="text-gray-400">
+                        <p class="text-gray-400 text-sm md:text-base">
                             &copy; 2025 Genesis Hackathon. All rights reserved.
                         </p>
                     </div>
@@ -1345,7 +1428,29 @@
             
             // Initialize smooth scrolling
             initSmoothScrolling();
+            
+            // Initialize timeline display based on screen size
+            updateTimelineDisplay();
+            
+            // Update timeline display on window resize
+            window.addEventListener('resize', updateTimelineDisplay);
         });
+        
+        // Update timeline display based on screen size
+        function updateTimelineDisplay() {
+            const mobileTimeline = document.getElementById('mobile-timeline');
+            const desktopTimeline = document.getElementById('desktop-timeline');
+            
+            if (window.innerWidth >= 1024) {
+                // Desktop view
+                mobileTimeline.style.display = 'none';
+                desktopTimeline.style.display = 'block';
+            } else {
+                // Mobile/tablet view
+                mobileTimeline.style.display = 'block';
+                desktopTimeline.style.display = 'none';
+            }
+        }
         
         // Load timeline events for mobile view
         function loadMobileTimelineEvents() {
@@ -1411,16 +1516,16 @@
                 memberCard.className = 'team-member-card';
                 
                 memberCard.innerHTML = `
-                    <div class="p-8">
-                        <div class="flex justify-center mb-8">
-                            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-primary-neon to-accent-neon flex items-center justify-center">
-                                <span class="text-2xl font-bold text-dark-bg">${member.initials}</span>
+                    <div class="p-6 md:p-8">
+                        <div class="flex justify-center mb-6 md:mb-8">
+                            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-primary-neon to-accent-neon flex items-center justify-center">
+                                <span class="text-xl md:text-2xl font-bold text-dark-bg">${member.initials}</span>
                             </div>
                         </div>
                         
-                        <h3 class="text-xl font-bold text-center mb-3 heading-secondary">${member.name}</h3>
+                        <h3 class="text-lg md:text-xl font-bold text-center mb-3 heading-secondary">${member.name}</h3>
                         <p class="text-primary-neon text-center mb-4">${member.role}</p>
-                        <p class="text-gray-300 text-center mb-8">${member.bio}</p>
+                        <p class="text-gray-300 text-center mb-6 md:mb-8">${member.bio}</p>
                         
                         <div class="flex justify-center space-x-6">
                             <a href="${member.linkedin}" class="social-icon">
@@ -1475,17 +1580,30 @@
         // Initialize mobile menu
         function initMobileMenu() {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
             
             mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
+                mobileMenuOverlay.classList.add('active');
+            });
+            
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenuOverlay.classList.remove('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+            mobileMenuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    mobileMenuOverlay.classList.remove('active');
+                });
             });
         }
         
         // Initialize particles
         function initParticles() {
             const particlesContainer = document.getElementById('particles-container');
-            const particleCount = 30; // Reduced for better mobile performance
+            const particleCount = window.innerWidth < 768 ? 15 : 30; // Reduced for better mobile performance
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
@@ -1527,12 +1645,6 @@
                             top: target.offsetTop - offset,
                             behavior: 'smooth'
                         });
-                        
-                        // Close mobile menu if open
-                        const mobileMenu = document.getElementById('mobile-menu');
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
                     }
                 });
             });
