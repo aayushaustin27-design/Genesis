@@ -248,6 +248,13 @@
             box-shadow: 0 8px 20px rgba(255, 60, 166, 0.6);
         }
         
+        .btn-form:disabled {
+            background: linear-gradient(45deg, #555, #777);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
         /* Form Container */
         .form-container {
             background-color: var(--card-bg);
@@ -306,6 +313,9 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             position: relative;
+            flex: 0 0 auto;
+            width: 280px;
+            margin: 0 15px;
         }
         
         .team-member-card:hover {
@@ -397,6 +407,63 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             color: var(--text-secondary);
+        }
+        
+        /* Registration Countdown */
+        .registration-countdown {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 13, 0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 60, 166, 0.2);
+            text-align: center;
+        }
+        
+        .registration-countdown h3 {
+            font-family: 'Audiowide', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-neon);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .registration-countdown .countdown {
+            margin: 20px 0;
+        }
+        
+        .registration-countdown .countdown-item {
+            background-color: rgba(0, 255, 231, 0.1);
+            border: 1px solid var(--accent-neon);
+        }
+        
+        .registration-countdown .countdown-value {
+            color: var(--accent-neon);
+        }
+        
+        .registration-closed {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(80, 0, 0, 0.3));
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .registration-closed h3 {
+            font-family: 'Audiowide', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ff5555;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .registration-closed p {
+            font-size: 1.2rem;
+            color: #ffaaaa;
         }
         
         /* Modal */
@@ -734,6 +801,630 @@
             transform: translateX(5px);
         }
         
+        /* Rules Section Styles */
+        .rules-section {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 13, 0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 60, 166, 0.2);
+        }
+        
+        .rule-item {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .rule-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-neon), var(--accent-neon));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(255, 60, 166, 0.3);
+        }
+        
+        .rule-content {
+            flex-grow: 1;
+        }
+        
+        .rule-title {
+            font-family: 'Audiowide', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-neon);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .rule-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .rule-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .rule-point-icon {
+            color: var(--accent-neon);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        /* Follow Us Section */
+        .follow-us {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 13, 0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 60, 166, 0.2);
+            text-align: center;
+        }
+        
+        .follow-us h3 {
+            font-family: 'Audiowide', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-neon);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .social-link:hover {
+            color: var(--accent-neon);
+            transform: translateY(-3px);
+        }
+        
+        .social-link i {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+        
+        .follow-message {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 15px;
+        }
+        
+        /* Prizes Section */
+        .prizes-section {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 13, 0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 60, 166, 0.2);
+        }
+        
+        .prizes-section h3 {
+            font-family: 'Audiowide', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-neon);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .prizes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .prize-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prize-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 25px rgba(255, 60, 166, 0.3);
+        }
+        
+        .prize-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-neon), var(--accent-neon));
+        }
+        
+        .prize-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .first-prize .prize-icon {
+            color: #FFD700; /* Gold */
+        }
+        
+        .second-prize .prize-icon {
+            color: #C0C0C0; /* Silver */
+        }
+        
+        .third-prize .prize-icon {
+            color: #CD7F32; /* Bronze */
+        }
+        
+        .prize-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .first-prize .prize-title {
+            color: #FFD700; /* Gold */
+        }
+        
+        .second-prize .prize-title {
+            color: #C0C0C0; /* Silver */
+        }
+        
+        .third-prize .prize-title {
+            color: #CD7F32; /* Bronze */
+        }
+        
+        .prize-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .trophy-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .trophy-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .trophy-image .hidden {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(10, 10, 13, 0.8);
+        }
+        
+        /* Featured Prize Card (1st Prize) */
+        .featured-prize {
+            grid-column: span 1;
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            border: 2px solid #FFD700;
+        }
+        
+        .featured-prize .prize-icon {
+            font-size: 4rem;
+        }
+        
+        .featured-prize .prize-title {
+            font-size: 2.5rem;
+        }
+        
+        .featured-prize .trophy-image {
+            width: 160px;
+            height: 160px;
+        }
+        
+        .featured-prize .prize-description {
+            font-size: 1.3rem;
+        }
+        
+        .certificate-note {
+            background: linear-gradient(135deg, rgba(0, 255, 231, 0.1), rgba(157, 0, 255, 0.1));
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 231, 0.3);
+        }
+        
+        .certificate-note h4 {
+            font-family: 'Audiowide', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-neon);
+        }
+        
+        .certificate-note p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 13, 0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 60, 166, 0.2);
+        }
+        
+        .faq-section h3 {
+            font-family: 'Audiowide', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-neon);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 15px rgba(255, 60, 166, 0.2);
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: var(--accent-neon);
+        }
+        
+        .faq-question.active {
+            color: var(--accent-neon);
+            background-color: rgba(0, 255, 231, 0.1);
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        .faq-answer ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+        
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 60, 166, 0.8);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(255, 60, 166, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-btn.prev {
+            left: 20px;
+        }
+        
+        .carousel-btn.next {
+            right: 20px;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-indicator.active {
+            background-color: var(--primary-neon);
+            transform: scale(1.2);
+        }
+        
+        /* Judge Card Styles - NEW */
+        .judge-card {
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 13, 0.9));
+            border: 2px solid rgba(157, 0, 255, 0.5);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(157, 0, 255, 0.2);
+            position: relative;
+            flex: 0 0 auto;
+            width: 320px;
+            margin: 0 15px;
+            z-index: 1;
+        }
+        
+        .judge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-accent), var(--accent-neon));
+            z-index: 2;
+        }
+        
+        .judge-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--secondary-accent);
+            box-shadow: 0 15px 35px rgba(157, 0, 255, 0.4);
+        }
+        
+        .judge-card:hover .judge-image {
+            transform: scale(1.08);
+        }
+        
+        .judge-card:hover .judge-overlay {
+            opacity: 0.8;
+        }
+        
+        .judge-header {
+            position: relative;
+            height: 160px;
+            overflow: hidden;
+        }
+        
+        .judge-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .judge-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 10, 13, 0.2), rgba(157, 0, 255, 0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+        
+        .judge-icon {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        
+        .judge-body {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .judge-name {
+            font-family: 'Audiowide', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--secondary-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .judge-position {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--accent-neon);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .judge-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .judge-badge {
+            display: inline-block;
+            background: rgba(157, 0, 255, 0.2);
+            color: var(--secondary-accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            border: 1px solid rgba(157, 0, 255, 0.4);
+        }
+        
+        /* Judges Section Styles - NEW */
+        .judges-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(10, 10, 13, 0.8), rgba(26, 26, 46, 0.8));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .judges-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(157, 0, 255, 0.1) 2px, transparent 2px);
+            background-size: 30px 30px;
+            z-index: -1;
+        }
+        
+        .judges-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .judges-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .judges-title {
+            font-family: 'Audiowide', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--secondary-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .judges-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--secondary-accent), transparent);
+        }
+        
+        .judges-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-neon);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
         /* Media Queries for Responsive Design */
         @media (min-width: 768px) {
             /* Tablet styles */
@@ -856,6 +1547,42 @@
                 font-size: 28px;
                 right: 20px;
             }
+            
+            /* Follow Us Section Responsive */
+            .social-links {
+                gap: 50px;
+            }
+            
+            .social-link {
+                font-size: 1.3rem;
+            }
+            
+            .social-link i {
+                font-size: 2.2rem;
+            }
+            
+            /* Prizes Section Responsive */
+            .prizes-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            /* FAQ Section Responsive */
+            .faq-question {
+                font-size: 1.4rem;
+            }
+            
+            /* Carousel Responsive */
+            .team-member-card {
+                width: 280px;
+                margin: 0 15px;
+            }
+            
+            /* Judge Card Responsive */
+            .judge-card {
+                width: 320px;
+                margin: 0 15px;
+            }
         }
         
         @media (min-width: 1024px) {
@@ -920,6 +1647,61 @@
             
             .mobile-timeline {
                 display: none !important;
+            }
+            
+            /* Follow Us Section Responsive */
+            .social-links {
+                gap: 70px;
+            }
+            
+            .social-link {
+                font-size: 1.4rem;
+            }
+            
+            .social-link i {
+                font-size: 2.5rem;
+            }
+            
+            /* Prizes Section Responsive */
+            .prizes-grid {
+                grid-template-columns: 1fr 1.2fr 1fr;
+                gap: 20px;
+                align-items: center;
+            }
+            
+            .featured-prize {
+                transform: scale(1.08);
+            }
+            
+            .trophy-image {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .featured-prize .trophy-image {
+                width: 180px;
+                height: 180px;
+            }
+            
+            /* FAQ Section Responsive */
+            .faq-question {
+                font-size: 1.5rem;
+            }
+            
+            /* Carousel Responsive */
+            .team-member-card {
+                width: 300px;
+                margin: 0 20px;
+            }
+            
+            /* Judge Card Responsive */
+            .judge-card {
+                width: 340px;
+                margin: 0 20px;
+            }
+            
+            .judges-title {
+                font-size: 3.5rem;
             }
         }
         
@@ -990,6 +1772,105 @@
             .mobile-timeline {
                 display: block !important;
             }
+            
+            /* Rules section mobile adjustments */
+            .rule-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .rule-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            /* Follow Us Section Responsive */
+            .social-links {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+            
+            .social-link {
+                font-size: 1.1rem;
+            }
+            
+            .social-link i {
+                font-size: 1.8rem;
+            }
+            
+            /* Prizes Section Responsive */
+            .prizes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .prize-card {
+                padding: 20px;
+            }
+            
+            .trophy-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .featured-prize {
+                transform: scale(1.02);
+            }
+            
+            .featured-prize .trophy-image {
+                width: 130px;
+                height: 130px;
+            }
+            
+            /* FAQ Section Responsive */
+            .faq-question {
+                font-size: 1.2rem;
+                padding: 12px 15px;
+            }
+            
+            .faq-answer {
+                font-size: 0.9rem;
+            }
+            
+            /* Carousel Responsive */
+            .team-member-card {
+                width: 220px;
+                margin: 0 10px;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .carousel-btn.prev {
+                left: 10px;
+            }
+            
+            .carousel-btn.next {
+                right: 10px;
+            }
+            
+            /* Judge Card Responsive */
+            .judge-card {
+                width: 260px;
+                margin: 0 10px;
+            }
+            
+            .judge-header {
+                height: 140px;
+            }
+            
+            .judge-name {
+                font-size: 1.3rem;
+            }
+            
+            .judges-title {
+                font-size: 2.2rem;
+            }
         }
         
         @media (max-width: 1023px) {
@@ -1038,7 +1919,10 @@
                 <a href="#hero" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Home</a>
                 <a href="#about" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">About</a>
                 <a href="#register" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Register</a>
+                <a href="#prizes" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Prize</a>
                 <a href="#timeline" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Timeline</a>
+                <a href="#rules" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Rules</a>
+                <a href="#faq" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">FAQ</a>
                 <a href="#team" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Team</a>
                 <a href="problemstatement.html" class="nav-item text-primary-neon">Problem Statements</a>
                 <a href="#contact" class="nav-item text-gray-300 hover:text-primary-neon transition-colors duration-300">Contact</a>
@@ -1059,7 +1943,10 @@
         <a href="#hero" class="mobile-menu-item">Home</a>
         <a href="#about" class="mobile-menu-item">About</a>
         <a href="#register" class="mobile-menu-item">Register</a>
+        <a href="#prizes" class="mobile-menu-item">Prize</a>
         <a href="#timeline" class="mobile-menu-item">Timeline</a>
+        <a href="#rules" class="mobile-menu-item">Rules</a>
+        <a href="#faq" class="mobile-menu-item">FAQ</a>
         <a href="#team" class="mobile-menu-item">Team</a>
         <a href="problemstatement.html" class="mobile-menu-item text-primary-neon">Problem Statements</a>
         <a href="#contact" class="mobile-menu-item">Contact</a>
@@ -1125,6 +2012,36 @@
         </div>
     </section>
     
+    <!-- Judges Section - NEW -->
+    <section id="judges" class="judges-section">
+        <div class="judges-container">
+            <div class="judges-header">
+                <h2 class="judges-title neon-text-secondary">MEET OUR JUDGES</h2>
+                <p class="judges-subtitle">Distinguished experts who will evaluate your innovative solutions</p>
+            </div>
+            
+            <div id="judges-carousel" class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="judges-track">
+                        <!-- Judge cards will be dynamically loaded here -->
+                    </div>
+                    
+                    <button class="carousel-btn prev" id="judges-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <button class="carousel-btn next" id="judges-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="carousel-indicators" id="judges-indicators">
+                    <!-- Indicators will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- About Section -->
     <section id="about" class="py-16 md:py-20 bg-gradient-to-b from-dark-bg to-black">
         <div class="container mx-auto px-4">
@@ -1183,6 +2100,37 @@
             
             <div class="max-w-4xl mx-auto">
                 <div class="form-container">
+                    <!-- Registration Countdown -->
+                    <div id="registration-countdown" class="registration-countdown">
+                        <h3 class="neon-text-accent">Registration Closes On:</h3>
+                        <p class="text-xl mb-4">25th October 2025, 8:00 AM</p>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <div id="reg-days" class="countdown-value">00</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div id="reg-hours" class="countdown-value">00</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div id="reg-minutes" class="countdown-value">00</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div id="reg-seconds" class="countdown-value">00</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-300 mt-4">Team up, bring your ideas, and secure your spot before it's too late!</p>
+                    </div>
+                    
+                    <!-- Registration Closed Message (hidden by default) -->
+                    <div id="registration-closed" class="registration-closed hidden">
+                        <h3>Registration Closed</h3>
+                        <p>Sorry, the registration period for Genesis Hackathon 2025 has ended.</p>
+                    </div>
+                    
                     <div class="mb-8 text-center">
                         <h3 class="text-xl md:text-2xl font-bold mb-4 heading-secondary neon-text-accent">Join Genesis Hackathon 2025</h3>
                         <p class="text-gray-300 text-base md:text-lg">
@@ -1194,7 +2142,7 @@
                     <div class="google-form-container">
                         <h3>Registration Form</h3>
                         <p class="text-base md:text-lg">Please fill out the registration form to secure your spot at Genesis Hackathon 2025.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvGlrGV-21AHfmh5c2YfK1LdPz74JCmb9zlpIfr8cyVXj79w/viewform?usp=sf_link" target="_blank" class="btn-form">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScvGlrGV-21AHfmh5c2YfK1LdPz74JCmb9zlpIfr8cyVXj79w/viewform?usp=sf_link" target="_blank" class="btn-form" id="registration-btn">
                             Open Registration Form
                             <i class="fas fa-external-link-alt ml-2"></i>
                         </a>
@@ -1202,6 +2150,70 @@
                     
                     <div class="mt-8 text-center text-gray-400">
                         <p class="text-sm md:text-base">Having trouble with the form? <a href="#contact" class="text-primary-neon hover:underline">Contact us</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Prizes Section -->
+    <section id="prizes" class="py-16 md:py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="prizes-section">
+                    <h3 class="neon-text-accent">Prizes & Recognition</h3>
+                    
+                    <div class="prizes-grid">
+                        <!-- 2nd Prize -->
+                        <div class="prize-card second-prize">
+                            <div class="prize-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h4 class="prize-title">2nd Prize</h4>
+                            <div class="trophy-image">
+                                <img src="second-trophy.jpg" alt="2nd Prize Trophy" class="w-full h-full object-cover">
+                                <div class="hidden">
+                                    <span class="text-2xl md:text-3xl font-bold text-dark-bg">2nd</span>
+                                </div>
+                            </div>
+                            <p class="prize-description">Certificate + Trophy</p>
+                        </div>
+                        
+                        <!-- 1st Prize (Featured) -->
+                        <div class="prize-card first-prize featured-prize">
+                            <div class="prize-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h4 class="prize-title">1st Prize</h4>
+                            <div class="trophy-image">
+                                <img src="first-trophy.jpg" alt="1st Prize Trophy" class="w-full h-full object-cover">
+                                <div class="hidden">
+                                    <span class="text-2xl md:text-3xl font-bold text-dark-bg">1st</span>
+                                </div>
+                            </div>
+                            <p class="prize-description">Certificate + Trophy</p>
+                        </div>
+                        
+                        <!-- 3rd Prize -->
+                        <div class="prize-card third-prize">
+                            <div class="prize-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h4 class="prize-title">3rd Prize</h4>
+                            <div class="trophy-image">
+                                <img src="third-trophy.jpg" alt="3rd Prize Trophy" class="w-full h-full object-cover">
+                                <div class="hidden">
+                                    <span class="text-2xl md:text-3xl font-bold text-dark-bg">3rd</span>
+                                </div>
+                            </div>
+                            <p class="prize-description">Certificate + Trophy</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificate Note -->
+                    <div class="certificate-note">
+                        <h4>Celebrating Every Participant</h4>
+                        <p>In addition to the winners, every participant in Genesis Hackathon 2025 will receive a professionally designed e-certificate recognizing their contribution, creativity, and effort in pushing the boundaries of innovation.</p>
                     </div>
                 </div>
             </div>
@@ -1236,6 +2248,268 @@
         </div>
     </section>
     
+    <!-- Rules Section -->
+    <section id="rules" class="py-16 md:py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-12 text-center neon-text-primary heading-primary">
+                EVENT RULES
+            </h2>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="rules-section">
+                    <!-- Team Formation Rule -->
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-users text-dark-bg text-xl"></i>
+                        </div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">Team Formation</h3>
+                            <div class="rule-description">
+                                <div class="rule-point">
+                                    <i class="fas fa-check-circle rule-point-icon"></i>
+                                    <span>Minimum 1 and maximum 4 members per team.</span>
+                                </div>
+                                <div class="rule-point">
+                                    <i class="fas fa-check-circle rule-point-icon"></i>
+                                    <span>Only 25 teams will be selected to participate.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Discipline & Conduct Rule -->
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-handshake text-dark-bg text-xl"></i>
+                        </div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">Discipline & Conduct</h3>
+                            <div class="rule-description">
+                                <div class="rule-point">
+                                    <i class="fas fa-check-circle rule-point-icon"></i>
+                                    <span>Maintain proper discipline at all times.</span>
+                                </div>
+                                <div class="rule-point">
+                                    <i class="fas fa-exclamation-triangle rule-point-icon" style="color: var(--accent-neon);"></i>
+                                    <span>No fighting or misbehavior — violation will lead to immediate disqualification.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reporting Time Rule -->
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-clock text-dark-bg text-xl"></i>
+                        </div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">Reporting Time</h3>
+                            <div class="rule-description">
+                                <div class="rule-point">
+                                    <i class="fas fa-check-circle rule-point-icon"></i>
+                                    <span>Reporting time is 8:30 AM and is compulsory for all participants.</span>
+                                </div>
+                                <div class="rule-point">
+                                    <i class="fas fa-exclamation-triangle rule-point-icon" style="color: var(--accent-neon);"></i>
+                                    <span>Punctuality is mandatory; latecomers will face appropriate disciplinary action.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Structure Rule -->
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-calendar-alt text-dark-bg text-xl"></i>
+                        </div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">Event Structure</h3>
+                            <div class="rule-description">
+                                <div class="rule-point">
+                                    <i class="fas fa-check-circle rule-point-icon"></i>
+                                    <span>The event will include 2 mentoring rounds and 2 judging rounds.</span>
+                                </div>
+                                <div class="rule-point">
+                                    <i class="fas fa-exclamation-triangle rule-point-icon" style="color: var(--accent-neon);"></i>
+                                    <span>Attendance in all rounds is mandatory.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Judging & Fair Play Rule -->
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-gavel text-dark-bg text-xl"></i>
+                        </div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">Judging & Fair Play</h3>
+                            <div class="rule-description">
+                                <div class="rule-point">
+                                    <i class="fas fa-check-circle rule-point-icon"></i>
+                                    <span>Judges' decisions are final and binding.</span>
+                                </div>
+                                <div class="rule-point">
+                                    <i class="fas fa-exclamation-triangle rule-point-icon" style="color: var(--accent-neon);"></i>
+                                    <span>Teams must maintain originality, honesty, and fair play throughout the event.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <p class="text-gray-400 text-sm md:text-base">
+                            Organized by SIN Innovation Center, St. Austin's Sr. Sec. School
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="faq-section">
+                    <h3 class="neon-text-accent">💬 Frequently Asked Questions (FAQs)</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>💀 1. What is a Hackathon?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>A Hackathon is an event where participants come together to solve problems, innovate, and build projects within a limited time. It encourages teamwork, creativity, and practical application of skills, often in technology, AI, or real-world challenges.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>🧠 2. What is Genesis Hackathon 2025?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Genesis Hackathon 2025 is a one-day innovation event organized by <strong>St. Austin's Sen. Sec. School</strong> in collaboration with <strong>SIN Technologies</strong>. It encourages students to create smart, AI-driven, and impactful solutions for real-world problems.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>📅 3. When and where will the event take place?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>📍 The event will be held on <strong>25th October 2025</strong>, from <strong>9:00 AM to 5:00 PM</strong> at <strong>St. Austin's Sen. Sec. School, Jodhpur</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>👥 4. Who can participate?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Students from <strong>Classes 6th to 12th</strong> can participate in this exciting hackathon and showcase their innovative skills.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>👨‍💻 5. Can I participate alone or do I need a team?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can participate <strong>solo or in a team</strong> of <strong>1 to 4 members</strong>. Collaboration is encouraged to combine different skills and ideas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>🧩 6. What are the idea themes?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Participants can choose from the following themes:</p>
+                            <ul>
+                                <li><strong>Young Bharat Builders</strong> (Local & Rural Innovation)</li>
+                                <li><strong>Smart Mobility for All</strong></li>
+                                <li><strong>Health at Home</strong></li>
+                                <li><strong>Make for the Planet</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>💰 7. Are there any prizes?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Exciting prizes, trophies, and certificates await the top teams.</p>
+                            <ul>
+                                <li>🥇 <strong>1st Prize:</strong> Certificate + Trophy</li>
+                                <li>🥈 <strong>2nd Prize:</strong> Certificate + Trophy</li>
+                                <li>🥉 <strong>3rd Prize:</strong> Certificate + Trophy</li>
+                            </ul>
+                            <p>🎖️ All participants will receive E-certificates and goodies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>📝 8. How can I register?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Click the <strong>"Register Now"</strong> button on the website or fill out the Google Form before <strong>25th October 2025, 8:00 AM</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>🧾 9. What should I bring on the event day?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Bring your <strong>student ID card</strong>, <strong>laptop (if needed)</strong>, and <strong>presentation materials</strong> (slides, posters, or prototypes).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>💡 10. What kind of ideas are expected?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ideas should be <strong>innovative, practical, and impactful</strong> — solving real-world challenges through technology or creativity. Prototype or conceptual presentations are both welcome.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>📜 11. Will participants receive certificates?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! All participants will receive <strong>E-certificates</strong>, and winners will get <strong>printed certificates and trophies.</strong></p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>☕ 12. Will refreshments be provided?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Snacks and lunch will be provided during the event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Team Members Section -->
     <section id="team" class="py-16 md:py-20 bg-gradient-to-b from-black to-dark-bg">
         <div class="container mx-auto px-4">
@@ -1245,6 +2519,28 @@
             
             <div id="team-grid">
                 <!-- Team members will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Follow Us Section -->
+    <section id="follow-us" class="py-16 md:py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="follow-us">
+                    <h3 class="neon-text-accent">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/sin.edutech/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            Instagram
+                        </a>
+                        <a href="https://www.linkedin.com/company/sinindia/posts/?feedView=all" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <p class="follow-message">Follow for live updates and event highlights!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1302,10 +2598,10 @@
                 </div>
                 
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-primary-neon transition-colors">
+                    <a href="https://www.instagram.com/sin.edutech/" target="_blank" class="text-gray-400 hover:text-primary-neon transition-colors">
                         <i class="fab fa-instagram text-xl md:text-2xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-primary-neon transition-colors">
+                    <a href="https://www.linkedin.com/company/sinindia/posts/?feedView=all" target="_blank" class="text-gray-400 hover:text-primary-neon transition-colors">
                         <i class="fab fa-linkedin text-xl md:text-2xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-primary-neon transition-colors">
@@ -1418,65 +2714,169 @@
             }
         ];
         
+        // Judges data - NEW
+        const judges = [
+            {
+                name: "Dr. Vinod Purohit",
+                position: "Ragistrar",
+                description: "Modi University",
+                image: "VP.jpg"
+            },
+            {
+                name: "Pankaj Suthar",
+                position: "Director of Research",
+                description: "RKCL",
+                image: "PS.jpg"
+            },
+            {
+                name: "Naveen Purohit",
+                position: "Senior Lecturer",
+                description: "Ashwariya College",
+                image: "NP.jpg"
+            },
+            {
+                name: "Jaya Gangwani",
+                position: "Senior Lecturer",
+                description: "Ashwariya College",
+                image: "SG.jpg"
+            },
+            {
+                name: "Tejas",
+                position: "Senior Developer",
+                description: "Blockchain Expert",
+                image: "T.jpg"
+            }
+        ];
+        
         // Leaders data - REPLACE THE IMAGE FILENAMES WITH YOUR LOCAL IMAGE FILES
         const leaders = [
+            {
+                name: "Dr. Vinod Purohit",
+                position: "Chairman",
+                description: "SIN Technologies",
+                image: "Vinod.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
             {
                 name: "Er. Harshvardhan Purohit",
                 position: "Founder and CEO",
                 description: "SIN Technologies",
-                image: "Harshvardhan.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+                image: "Harsh.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
             },
             {
                 name: "Bhupesh Kachhwaha",
                 position: "Director",
                 description: "St. Austin's Sen. Sec. School",
-                image: "images/bhupesh-kachhwaha.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+                image: "Bhupesh.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
             },
             {
                 name: "Anjana Chauhan",
                 position: "Principal",
                 description: "St. Austin's Sen. Sec. School",
-                image: "images/anjana-chauhan.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+                image: "Anjana.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
             },
             {
                 name: "Hitendra Singh Gehlot",
                 position: "Supervisor",
                 description: "St. Austin's Sen. Sec. School",
-                image: "images/hitendra-singh-gehlot.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
-            }
+                image: "hitsa.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Pushpendra Singh Gaur",
+                position: "Supervisor",
+                description: "St. Austin's Sen. Sec. School",
+                image: "Gaur.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Aditya Purohit",
+                position: "Manager",
+                description: "SIN Technologies",
+                image: "AP.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Varsha Ramdev  ",
+                position: "Brand Manager",
+                description: "SIN Technologies",
+                image: "Varsha.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Shreya Vyas",
+                position: "Core Member",
+                description: "SIN Technologies",
+                image: "Shreya.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Manas Parihar",
+                position: "Core Member",
+                description: "SIN Technologies",
+                image: "Manas.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Bhavya Sharma",
+                position: "Core Member",
+                description: "SIN Technologies",
+                image: "Bhavya.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+             {
+                name: "Chavi Shah",
+                position: "Core Member",
+                description: "SIN Technologies",
+                image: "Chavi.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Mohit Mehta",
+                position: "Core Member",
+                description: "SIN Technologies",
+                image: "Mohit.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
+            {
+                name: "Pragya Goyal",
+                position: "Core Member",
+                description: "SIN Technologies",
+                image: "PG.jpg" // REPLACE WITH YOUR LOCAL IMAGE FILE
+            },
         ];
 
         // Participants data - REPLACE THE IMAGE FILENAMES WITH YOUR LOCAL IMAGE FILES
         const participants = [
-            { name: "Mahipal Singh Rathore", position: "Head / Developer", image: "images/mahipal-singh-rathore.jpg" },
-            { name: "Urmi Bhati", position: "Head / Data Analyst", image: "images/urmi-bhati.jpg" },
-            { name: "Aayush Lakhara", position: "Developer", image: "images/aayush-lakhara.jpg" },
-            { name: "Manan Kheriwal", position: "Developer", image: "images/manan-kheriwal.jpg" },
-            { name: "Vishwajeet Singh Bhati", position: "Developer", image: "images/vishwajeet-singh-bhati.jpg" },
-            { name: "Narayan Sharma", position: "Event Management", image: "images/narayan-sharma.jpg" },
-            { name: "Krishna Bhati", position: "Event Management", image: "images/krishna-bhati.jpg" },
-            { name: "Saumya", position: "Marketing", image: "images/saumya.jpg" },
-            { name: "Kuldeep Bisnoi", position: "Marketing", image: "images/kuldeep-bisnoi.jpg" },
-            { name: "Khushi Baheti", position: "Data Analyst", image: "images/khushi-baheti.jpg" },
-            { name: "Amrita Jodha", position: "Data Analyst", image: "images/amrita-jodha.jpg" },
-            { name: "Jyoti Soni", position: "Data Analyst", image: "images/jyoti-soni.jpg" },
-            { name: "Manasvi", position: "Graphic Designing", image: "images/manasvi.jpg" },
-            { name: "Sonakshi", position: "Graphic Designing", image: "images/sonakshi.jpg" },
-            { name: "Raveena Bhati", position: "Graphic Designing", image: "images/raveena-bhati.jpg" },
-            { name: "Chanchal Rathore", position: "Graphic Designing", image: "images/chanchal-rathore.jpg" }
+            { name: "Mahipal Singh Rathore", position: "Head / Developer", image: "Mahipal.jpg" },
+            { name: "Urmi Bhati", position: "Head / Data Analyst", image: "Urmi.jpg" },
+            { name: "Aayush Lakhara", position: "Web Developer", image: "Aayush.png" },
+            { name: "Manan Kheriwal", position: "Web Developer", image: "Manan.jpg" },
+            { name: "Vishwajeet Singh Bhati", position: "Web Developer", image: "Vishwajeet.jpg" },
+            { name: "Narayan Sharma", position: "Event Management", image: "Narayan.jpg" },
+            { name: "Rakesh Solanki", position: "Event Management", image: "Rakesh.jpg" },
+            { name: "Krishna Bhati", position: "Event Management", image: "Krishna.jpg" },
+            { name: "Saumya Jatoliya", position: "Marketing", image: "Saumya.jpg" },
+            { name: "Kuldeep Bishnoi", position: "Marketing", image: "Kuldeep.jpg" },
+            { name: "Khushi Baheti", position: "Data Analyst", image: "Khushi.jpg" },
+            { name: "Amrita Jodha", position: "Data Analyst", image: "Amrita.jpg" },
+            { name: "Jyoti Soni", position: "Data Analyst", image: "Jyoti.jpg" },
+            { name: "Manasvi Tak", position: "Graphic Designing", image: "Manasvi.jpg" },
+            { name: "Sonakshi Vaishnav", position: "Graphic Designing", image: "Sonakshi.jpg" },
+            { name: "Raveena Bhati", position: "Graphic Designing", image: "Raveena.jpg" },
+            { name: "Chanchal Rathore", position: "Graphic Designing", image: "Chanchal.jpg" }
         ];
         
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
+            // Load judges carousel - NEW
+            loadJudgesCarousel();
+            
             // Load timeline events for both mobile and desktop
             loadMobileTimelineEvents();
             loadDesktopTimelineEvents();
             
-            // Load team members
-            loadTeamMembers();
+            // Load team members with carousel
+            loadTeamMembersWithCarousel();
             
-            // Initialize countdown timer
+            // Initialize trophy images with fallback
+            initTrophyImages();
+            
+            // Initialize countdown timer for event
             initCountdownTimer();
+            
+            // Initialize registration countdown timer
+            initRegistrationCountdown();
             
             // Initialize mobile menu
             initMobileMenu();
@@ -1492,7 +2892,63 @@
             
             // Update timeline display on window resize
             window.addEventListener('resize', updateTimelineDisplay);
+            
+            // Initialize FAQ accordion
+            initFaqAccordion();
         });
+        
+        // Load judges carousel - NEW
+        function loadJudgesCarousel() {
+            const judgesTrack = document.getElementById('judges-track');
+            const judgesIndicators = document.getElementById('judges-indicators');
+            
+            judges.forEach((judge, index) => {
+                const judgeCard = createJudgeCard(judge);
+                judgesTrack.appendChild(judgeCard);
+                
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = 'carousel-indicator';
+                if (index === 0) indicator.classList.add('active');
+                indicator.setAttribute('data-index', index);
+                judgesIndicators.appendChild(indicator);
+            });
+            
+            // Initialize carousel
+            setTimeout(() => {
+                initCarousel('judges-track', 'judges-prev', 'judges-next', 'judges-indicators', true);
+            }, 100);
+        }
+        
+        // Create judge card - NEW
+        function createJudgeCard(judge) {
+            const card = document.createElement('div');
+            card.className = 'judge-card';
+            
+            const cardContent = `
+                <div class="judge-header">
+                    <img src="${judge.image}" alt="${judge.name}" class="judge-image">
+                    <div class="judge-overlay">
+                        <i class="fas fa-gavel judge-icon"></i>
+                    </div>
+                </div>
+                <div class="judge-body">
+                    <h3 class="judge-name">${judge.name}</h3>
+                    <p class="judge-position">${judge.position}</p>
+                    <p class="judge-description">${judge.description}</p>
+                    <span class="judge-badge">JUDGE</span>
+                </div>
+            `;
+            
+            card.innerHTML = cardContent;
+            
+            // Set up image loading with fallback
+            const imgElement = card.querySelector('.judge-image');
+            const fallbackElement = card.querySelector('.judge-overlay');
+            loadImageWithFallback(imgElement, fallbackElement, judge.name);
+            
+            return card;
+        }
         
         // Update timeline display based on screen size
         function updateTimelineDisplay() {
@@ -1579,97 +3035,300 @@
             };
         }
         
-        // Load team members with new structure
-        function loadTeamMembers() {
+        // Initialize trophy images with fallback
+        function initTrophyImages() {
+            const trophyImages = document.querySelectorAll('.trophy-image');
+            
+            trophyImages.forEach(trophyImage => {
+                const img = trophyImage.querySelector('img');
+                const fallback = trophyImage.querySelector('.hidden');
+                
+                if (img && fallback) {
+                    loadImageWithFallback(img, fallback, img.alt);
+                }
+            });
+        }
+        
+        // Load team members with carousel
+        function loadTeamMembersWithCarousel() {
             const teamContainer = document.getElementById('team-grid');
             teamContainer.innerHTML = ''; // Clear existing content
             
-            // Create Leaders Section
+            // Create Leaders Carousel
             const leadersSection = document.createElement('div');
-            leadersSection.className = 'mb-16';
+            leadersSection.className = 'carousel-container';
             
             const leadersTitle = document.createElement('h3');
             leadersTitle.className = 'text-2xl md:text-3xl font-bold mb-8 text-center neon-text-accent heading-primary';
             leadersTitle.textContent = 'LEADERSHIP TEAM';
             leadersSection.appendChild(leadersTitle);
             
-            const leadersGrid = document.createElement('div');
-            leadersGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8';
+            const leadersWrapper = document.createElement('div');
+            leadersWrapper.className = 'carousel-wrapper';
             
-            leaders.forEach(leader => {
-                const leaderCard = document.createElement('div');
-                leaderCard.className = 'team-member-card';
-                leaderCard.innerHTML = `
-                    <div class="p-6 md:p-8">
-                        <div class="flex justify-center mb-6 md:mb-8">
-                            <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-primary-neon to-accent-neon flex items-center justify-center glow overflow-hidden relative">
-                                <img src="${leader.image}" alt="${leader.name}" class="profile-image">
-                                <div class="hidden absolute inset-0 flex items-center justify-center">
-                                    <span class="text-2xl md:text-3xl font-bold text-dark-bg">${leader.name.split(' ').map(n => n[0]).join('')}</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-xl md:text-2xl font-bold text-center mb-3 heading-secondary">${leader.name}</h3>
-                        <p class="text-primary-neon text-center mb-4 text-lg">${leader.position}</p>
-                        <p class="text-gray-300 text-center">${leader.description}</p>
-                    </div>
-                `;
+            const leadersTrack = document.createElement('div');
+            leadersTrack.className = 'carousel-track';
+            leadersTrack.id = 'leaders-track';
+            
+            const leadersPrevBtn = document.createElement('button');
+            leadersPrevBtn.className = 'carousel-btn prev';
+            leadersPrevBtn.id = 'leaders-prev';
+            leadersPrevBtn.innerHTML = '&lt;';
+            
+            const leadersNextBtn = document.createElement('button');
+            leadersNextBtn.className = 'carousel-btn next';
+            leadersNextBtn.id = 'leaders-next';
+            leadersNextBtn.innerHTML = '&gt;';
+            
+            // Create indicators for leaders carousel
+            const leadersIndicators = document.createElement('div');
+            leadersIndicators.className = 'carousel-indicators';
+            leadersIndicators.id = 'leaders-indicators';
+            
+            leaders.forEach((leader, index) => {
+                const leaderCard = createTeamMemberCard(leader);
+                leadersTrack.appendChild(leaderCard);
                 
-                // Set up image loading with fallback
-                const imgElement = leaderCard.querySelector('.profile-image');
-                const fallbackElement = leaderCard.querySelector('.hidden');
-                loadImageWithFallback(imgElement, fallbackElement, leader.name);
-                
-                leadersGrid.appendChild(leaderCard);
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = 'carousel-indicator';
+                if (index === 0) indicator.classList.add('active');
+                indicator.setAttribute('data-index', index);
+                leadersIndicators.appendChild(indicator);
             });
             
-            leadersSection.appendChild(leadersGrid);
+            leadersWrapper.appendChild(leadersTrack);
+            leadersWrapper.appendChild(leadersPrevBtn);
+            leadersWrapper.appendChild(leadersNextBtn);
+            leadersSection.appendChild(leadersWrapper);
+            leadersSection.appendChild(leadersIndicators);
             teamContainer.appendChild(leadersSection);
             
-            // Create Participants Section
+            // Create Participants Carousel
             const participantsSection = document.createElement('div');
+            participantsSection.className = 'carousel-container';
             
             const participantsTitle = document.createElement('h3');
             participantsTitle.className = 'text-2xl md:text-3xl font-bold mb-8 text-center neon-text-accent heading-primary';
             participantsTitle.textContent = 'PARTICIPANTS';
             participantsSection.appendChild(participantsTitle);
             
-            const participantsGrid = document.createElement('div');
-            participantsGrid.className = 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6';
+            const participantsWrapper = document.createElement('div');
+            participantsWrapper.className = 'carousel-wrapper';
             
-            participants.forEach(participant => {
-                const participantCard = document.createElement('div');
-                participantCard.className = 'team-member-card';
-                participantCard.innerHTML = `
-                    <div class="p-4 text-center">
-                        <div class="flex justify-center mb-4">
-                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary-neon to-accent-neon flex items-center justify-center overflow-hidden relative">
-                                <img src="${participant.image}" alt="${participant.name}" class="profile-image">
-                                <div class="hidden absolute inset-0 flex items-center justify-center">
-                                    <span class="text-lg font-bold text-dark-bg">${participant.name.split(' ').map(n => n[0]).join('')}</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-base md:text-lg font-bold mb-1 heading-secondary">${participant.name}</h3>
-                        <p class="text-primary-neon text-sm">${participant.position}</p>
-                    </div>
-                `;
+            const participantsTrack = document.createElement('div');
+            participantsTrack.className = 'carousel-track';
+            participantsTrack.id = 'participants-track';
+            
+            const participantsPrevBtn = document.createElement('button');
+            participantsPrevBtn.className = 'carousel-btn prev';
+            participantsPrevBtn.id = 'participants-prev';
+            participantsPrevBtn.innerHTML = '&lt;';
+            
+            const participantsNextBtn = document.createElement('button');
+            participantsNextBtn.className = 'carousel-btn next';
+            participantsNextBtn.id = 'participants-next';
+            participantsNextBtn.innerHTML = '&gt;';
+            
+            // Create indicators for participants carousel
+            const participantsIndicators = document.createElement('div');
+            participantsIndicators.className = 'carousel-indicators';
+            participantsIndicators.id = 'participants-indicators';
+            
+            participants.forEach((participant, index) => {
+                const participantCard = createTeamMemberCard(participant);
+                participantsTrack.appendChild(participantCard);
                 
-                // Set up image loading with fallback
-                const imgElement = participantCard.querySelector('.profile-image');
-                const fallbackElement = participantCard.querySelector('.hidden');
-                loadImageWithFallback(imgElement, fallbackElement, participant.name);
-                
-                participantsGrid.appendChild(participantCard);
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = 'carousel-indicator';
+                if (index === 0) indicator.classList.add('active');
+                indicator.setAttribute('data-index', index);
+                participantsIndicators.appendChild(indicator);
             });
             
-            participantsSection.appendChild(participantsGrid);
+            participantsWrapper.appendChild(participantsTrack);
+            participantsWrapper.appendChild(participantsPrevBtn);
+            participantsWrapper.appendChild(participantsNextBtn);
+            participantsSection.appendChild(participantsWrapper);
+            participantsSection.appendChild(participantsIndicators);
             teamContainer.appendChild(participantsSection);
+            
+            // Initialize carousels
+            setTimeout(() => {
+                initCarousel('leaders-track', 'leaders-prev', 'leaders-next', 'leaders-indicators', true);
+                initCarousel('participants-track', 'participants-prev', 'participants-next', 'participants-indicators', true);
+            }, 100);
         }
         
-        // Initialize countdown timer
+        // Helper function to create team member card
+        function createTeamMemberCard(member) {
+            const card = document.createElement('div');
+            card.className = 'team-member-card';
+            
+            const cardContent = `
+                <div class="p-6 md:p-8">
+                    <div class="flex justify-center mb-6 md:mb-8">
+                        <div class="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-primary-neon to-accent-neon flex items-center justify-center glow overflow-hidden relative">
+                            <img src="${member.image}" alt="${member.name}" class="profile-image">
+                            <div class="hidden absolute inset-0 flex items-center justify-center">
+                                <span class="text-2xl md:text-3xl font-bold text-dark-bg">${member.name.split(' ').map(n => n[0]).join('')}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl md:text-2xl font-bold text-center mb-3 heading-secondary">${member.name}</h3>
+                    <p class="text-primary-neon text-center mb-4 text-lg">${member.position}</p>
+                    <p class="text-gray-300 text-center">${member.description}</p>
+                </div>
+            `;
+            
+            card.innerHTML = cardContent;
+            
+            // Set up image loading with fallback
+            const imgElement = card.querySelector('.profile-image');
+            const fallbackElement = card.querySelector('.hidden');
+            loadImageWithFallback(imgElement, fallbackElement, member.name);
+            
+            return card;
+        }
+        
+        // Initialize carousel with automatic sliding
+        function initCarousel(trackId, prevBtnId, nextBtnId, indicatorsId, autoSlide = false) {
+            const track = document.getElementById(trackId);
+            const prevBtn = document.getElementById(prevBtnId);
+            const nextBtn = document.getElementById(nextBtnId);
+            const indicators = document.getElementById(indicatorsId);
+            
+            // Get card width and margin
+            const firstCard = track.querySelector('.team-member-card, .judge-card');
+            if (!firstCard) return;
+            
+            const cardStyle = window.getComputedStyle(firstCard);
+            const cardWidth = firstCard.offsetWidth;
+            const cardMargin = parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+            const cardTotalWidth = cardWidth + cardMargin;
+            
+            // Current position and index
+            let currentPosition = 0;
+            let currentIndex = 0;
+            const totalCards = track.children.length;
+            
+            // Auto slide interval
+            let slideInterval;
+            
+            // Function to go to next slide
+            function goToNextSlide() {
+                currentIndex++;
+                if (currentIndex >= totalCards) {
+                    currentIndex = 0; // Loop to first card
+                }
+                currentPosition = -(currentIndex * cardTotalWidth);
+                track.style.transform = `translateX(${currentPosition}px)`;
+                
+                // Update indicators
+                updateIndicators(indicators, currentIndex);
+            }
+            
+            // Function to go to previous slide
+            function goToPrevSlide() {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = totalCards - 1; // Loop to last card
+                }
+                currentPosition = -(currentIndex * cardTotalWidth);
+                track.style.transform = `translateX(${currentPosition}px)`;
+                
+                // Update indicators
+                updateIndicators(indicators, currentIndex);
+            }
+            
+            // Previous button click
+            prevBtn.addEventListener('click', function() {
+                goToPrevSlide();
+                
+                // Reset auto slide interval
+                if (autoSlide) {
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(goToNextSlide, 4000);
+                }
+            });
+            
+            // Next button click
+            nextBtn.addEventListener('click', function() {
+                goToNextSlide();
+                
+                // Reset auto slide interval
+                if (autoSlide) {
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(goToNextSlide, 4000);
+                }
+            });
+            
+            // Handle indicator clicks
+            if (indicators) {
+                const indicatorElements = indicators.querySelectorAll('.carousel-indicator');
+                indicatorElements.forEach((indicator, index) => {
+                    indicator.addEventListener('click', function() {
+                        currentIndex = index;
+                        currentPosition = -(currentIndex * cardTotalWidth);
+                        track.style.transform = `translateX(${currentPosition}px)`;
+                        
+                        // Update indicators
+                        updateIndicators(indicators, currentIndex);
+                        
+                        // Reset auto slide interval
+                        if (autoSlide) {
+                            clearInterval(slideInterval);
+                            slideInterval = setInterval(goToNextSlide, 4000);
+                        }
+                    });
+                });
+            }
+            
+            // Set up auto slide if enabled
+            if (autoSlide) {
+                slideInterval = setInterval(goToNextSlide, 4000);
+                
+                // Pause auto slide when hovering over carousel
+                const carouselWrapper = track.closest('.carousel-wrapper');
+                carouselWrapper.addEventListener('mouseenter', function() {
+                    clearInterval(slideInterval);
+                });
+                
+                carouselWrapper.addEventListener('mouseleave', function() {
+                    slideInterval = setInterval(goToNextSlide, 4000);
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                // Recalculate card width
+                const newCardWidth = firstCard.offsetWidth;
+                const newCardMargin = parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+                const newCardTotalWidth = newCardWidth + newCardMargin;
+                
+                // Update position
+                currentPosition = -(currentIndex * newCardTotalWidth);
+                track.style.transform = `translateX(${currentPosition}px)`;
+            });
+        }
+        
+        // Update carousel indicators
+        function updateIndicators(indicators, activeIndex) {
+            if (!indicators) return;
+            
+            const indicatorElements = indicators.querySelectorAll('.carousel-indicator');
+            indicatorElements.forEach((indicator, index) => {
+                if (index === activeIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        // Initialize countdown timer for event
         function initCountdownTimer() {
             // Set the date we're counting down to - October 25, 2025
             const eventDate = new Date('October 25, 2025 09:00:00').getTime();
@@ -1701,6 +3360,53 @@
                 document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
                 document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }, 1000);
+        }
+        
+        // Initialize registration countdown timer
+        function initRegistrationCountdown() {
+            // Set the registration closing date - October 25, 2025, 8:00 AM
+            const regCloseDate = new Date('October 25, 2025 08:00:00').getTime();
+            
+            // Update the countdown every 1 second
+            const regCountdownInterval = setInterval(function() {
+                // Get today's date and time
+                const now = new Date().getTime();
+                
+                // Find the distance between now and the registration closing date
+                const distance = regCloseDate - now;
+                
+                // If the countdown is finished, disable registration
+                if (distance < 0) {
+                    clearInterval(regCountdownInterval);
+                    
+                    // Hide registration countdown
+                    document.getElementById('registration-countdown').style.display = 'none';
+                    
+                    // Show registration closed message
+                    document.getElementById('registration-closed').classList.remove('hidden');
+                    
+                    // Disable registration button
+                    const regButton = document.getElementById('registration-btn');
+                    regButton.textContent = 'Registration Closed';
+                    regButton.removeAttribute('href');
+                    regButton.setAttribute('disabled', 'disabled');
+                    regButton.style.cursor = 'not-allowed';
+                    
+                    return;
+                }
+                
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Display the result
+                document.getElementById('reg-days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('reg-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('reg-minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('reg-seconds').textContent = seconds.toString().padStart(2, '0');
             }, 1000);
         }
         
@@ -1773,6 +3479,30 @@
                             behavior: 'smooth'
                         });
                     }
+                });
+            });
+        }
+        
+        // Initialize FAQ accordion
+        function initFaqAccordion() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on question
+                    this.classList.toggle('active');
+                    
+                    // Toggle active class on answer
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('active');
+                    
+                    // Close other open FAQs
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.classList.remove('active');
+                        }
+                    });
                 });
             });
         }
